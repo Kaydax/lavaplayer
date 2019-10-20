@@ -11,6 +11,7 @@ import com.sedmelluq.discord.lavaplayer.container.playlists.M3uPlaylistContainer
 import com.sedmelluq.discord.lavaplayer.container.playlists.PlainPlaylistContainerProbe;
 import com.sedmelluq.discord.lavaplayer.container.playlists.PlsPlaylistContainerProbe;
 import com.sedmelluq.discord.lavaplayer.container.wav.WavContainerProbe;
+import com.sedmelluq.discord.lavaplayer.container.xm.XmContainerProbe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public enum MediaContainer {
   PLAIN(new PlainPlaylistContainerProbe()),
   MP3(new Mp3ContainerProbe()),
   ADTS(new AdtsContainerProbe()),
+  XM(new XmContainerProbe()),
   MPEGADTS(new MpegAdtsContainerProbe());
 
   /**

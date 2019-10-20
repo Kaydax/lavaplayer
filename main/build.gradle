@@ -30,6 +30,7 @@ dependencies {
   compile 'org.jsoup:jsoup:1.11.3'
 
   compile 'net.iharder:base64:2.3.9'
+  compile 'com.github.micromod:ibxm:a73'
 
   testCompile 'org.codehaus.groovy:groovy:2.5.5'
   testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
