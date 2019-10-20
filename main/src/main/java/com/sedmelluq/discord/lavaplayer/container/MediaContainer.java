@@ -32,7 +32,6 @@ public enum MediaContainer {
   PLAIN(new PlainPlaylistContainerProbe()),
   MP3(new Mp3ContainerProbe()),
   ADTS(new AdtsContainerProbe()),
-  XM(new XmContainerProbe()),
   MPEGADTS(new MpegAdtsContainerProbe());
 
   /**
