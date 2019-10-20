@@ -13,7 +13,7 @@ public class XmTrackProvider {
 
     public XmTrackProvider(AudioProcessingContext context, IBXM ibxm) {
         this.ibxm = ibxm;
-        this.downstream = AudioPipelineFactory.create(context, new PcmFormat(2, 44100));
+        this.downstream = AudioPipelineFactory.create(context, new PcmFormat(2, ibxm.getSampleRate()));
         BLOCKS_IN_BUFFER = ibxm.getMixBufferLength();
     }
 

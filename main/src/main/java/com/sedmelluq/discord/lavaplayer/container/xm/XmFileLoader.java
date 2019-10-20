@@ -17,7 +17,7 @@ public class XmFileLoader {
 
     public XmTrackProvider loadTrack(AudioProcessingContext context) throws IOException {
         Module module = new Module( inputStream );
-        IBXM ibxm = new IBXM( module, 44100 );
+        IBXM ibxm = new IBXM( module, context.outputFormat.sampleRate );
         ibxm.setInterpolation(Channel.SINC);
         return new XmTrackProvider(context, ibxm);
     }
