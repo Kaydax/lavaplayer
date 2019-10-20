@@ -31,7 +31,7 @@ public class XmAudioTrack extends BaseAudioTrack {
 
         try {
             log.debug("Starting to play module {}", getIdentifier());
-            localExecutor.executeProcessingLoop(trackProvider::provideFrames, trackProvider::null);
+            localExecutor.executeProcessingLoop(trackProvider::provideFrames, null);
         } finally {
             trackProvider.close();
         }
