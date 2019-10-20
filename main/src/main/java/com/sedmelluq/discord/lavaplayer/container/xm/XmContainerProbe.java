@@ -16,6 +16,7 @@ import java.io.IOException;
 import static com.sedmelluq.discord.lavaplayer.container.MediaContainerDetection.UNKNOWN_ARTIST;
 import static com.sedmelluq.discord.lavaplayer.container.MediaContainerDetection.UNKNOWN_TITLE;
 import static com.sedmelluq.discord.lavaplayer.container.MediaContainerDetectionResult.supportedFormat;
+import static com.sedmelluq.discord.lavaplayer.tools.DataFormatTools.defaultOnNull;
 
 public class XmContainerProbe implements MediaContainerProbe {
     private static final Logger log = LoggerFactory.getLogger(XmContainerProbe.class);
@@ -43,7 +44,7 @@ public class XmContainerProbe implements MediaContainerProbe {
 
         inputStream.seek(0);
 
-        return new supportedFormat(this, null, new AudioTrackInfo(
+        return supportedFormat(this, null, new AudioTrackInfo(
                 defaultOnNull(module.songName, UNKNOWN_TITLE),
                 UNKNOWN_ARTIST,
                 Long.MAX_VALUE,
