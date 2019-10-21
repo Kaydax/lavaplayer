@@ -50,7 +50,7 @@ public class XmContainerProbe implements MediaContainerProbe {
         return supportedFormat(this, null, new AudioTrackInfo(
                 defaultOnNull(module.songName, UNKNOWN_TITLE),
                 UNKNOWN_ARTIST,
-                defaultOnNull(ibxm.calculateSongDuration(), Long.MAX_VALUE),
+                ibxm.calculateSongDuration(),
                 reference.identifier,
                 true,
                 reference.identifier
