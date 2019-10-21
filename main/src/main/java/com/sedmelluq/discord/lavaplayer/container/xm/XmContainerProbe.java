@@ -8,6 +8,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioReference;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import ibxm.Module;
+import ibxm.IBXM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,10 +45,12 @@ public class XmContainerProbe implements MediaContainerProbe {
 
         inputStream.seek(0);
 
+        IBXM ibxm = new IBXM( module, 44100 );
+
         return supportedFormat(this, null, new AudioTrackInfo(
                 defaultOnNull(module.songName, UNKNOWN_TITLE),
                 UNKNOWN_ARTIST,
-                Long.MAX_VALUE,
+                defaultOnNull(ibxm.calculateSongDuration(), Long.MAX_VALUE),
                 reference.identifier,
                 true,
                 reference.identifier
