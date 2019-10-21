@@ -1,1 +1,1 @@
-include 'main', 'node', 'common', 'stream-merger', 'test-samples'
+include 'main', 'common', 'stream-merger', 'test-samples'
